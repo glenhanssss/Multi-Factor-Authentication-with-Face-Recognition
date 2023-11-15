@@ -1,0 +1,3 @@
+0 depan
+1 kanan
+2 kiri
