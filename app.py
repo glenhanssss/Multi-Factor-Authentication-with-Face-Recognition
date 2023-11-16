@@ -98,12 +98,11 @@ def main():
                             st.success("Autentikasi Selesaiiii 😁")
                             st.balloons()
                             # setelah semua autentikasi brehasil, akan langsung redirect masuk ke sistem
-                            with st.spinner('Redirecting to Sistem...'):
+                            with st.spinner('Mohon tunggu 5 detik, sedang menuju Sistem...'):
                                 time.sleep(5)
-                                st.markdown(
-                                    '<meta http-equiv="refresh" content="5;URL=https://github.com/glenhanssss/Multi-Factor-Authentication-with-Face-Recognition/blob/main/ceritanya%20tampilan%20Sistem.jpg" />',
-                                    unsafe_allow_html=True
-                                )
+                                image_path = "ceritanya_tampilan_Sistem.jpg"
+                                image = Image.open(image_path)
+                                st.image(image, use_column_width=True)
                         else:
                             st.warning("Autentikasi Ketiga Gagal😑 Foto harus menghadap Kiri dan akurasi harus diatas 90%. Ulangi Upload Foto")
                 else:
