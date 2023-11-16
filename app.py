@@ -2,6 +2,7 @@ import streamlit as st
 from keras.models import load_model
 from PIL import Image, ImageOps
 import numpy as np
+import time
 
 # Set the page to wide mode
 st.set_page_config(layout="wide")
@@ -94,11 +95,12 @@ def main():
 
                         # cek kondisi ketiga
                         if class_name.strip().lower() == "kiri" and confidence_score > 0.9:
-                            st.success("Autentikasi Selesaiiii 😁 Silahkan masuk kedalam Sistem.com")
-                            # ceritanya akan muncul tombol untuk masuk ke sistem.com apabila semua autentikasi sudah terlewati
-                            if st.button("Masuk ke Sistem.com"):
-                                st.write("Redirecting to Sistem.com...")
-                                st.markdown('<meta http-equiv="refresh" content="0;URL=https://www.google.com/"/>', unsafe_allow_html=True)
+                            st.success("Autentikasi Selesaiiii 😁")
+                            st.balloons()
+                            # setelah semua autentikasi brehasil, akan langsung redirect masuk ke sistem
+                            with st.spinner('Redirecting to Sistem...'):
+                                time.sleep(5)
+                                st.write('<meta http-equiv="refresh" content="2;URL=https://www.google.com/" />', unsafe_allow_html=True)
                         else:
                             st.warning("Autentikasi Ketiga Gagal😑 Foto harus menghadap Kiri dan akurasi harus diatas 90%. Ulangi Upload Foto")
                 else:
