@@ -3,7 +3,6 @@ from keras.models import load_model
 from PIL import Image, ImageOps
 import numpy as np
 import time
-from streamlit_option_menu import option_menu
 
 # Set the page to wide mode
 st.set_page_config(layout="wide")
@@ -34,7 +33,10 @@ def predict(image_path):
 
     return class_name, confidence_score
 
-def home():
+def main():
+    # Menambahkan sidebar dengan logo
+    st.sidebar.image("logo.png", use_column_width=True)
+
     # Judul dan deskripsi aplikasi
     st.title("Multi Factor Authentication with Face Recognition")
     st.markdown("<h6 style='color: red;'> Perlu diperhatikan bahwa Developer dari proyek ini mempunyai maksud untuk menawarkan Algoritma/Fitur Autentikasi multi faktor yang lebih baik dari autentikasi-autentikasi sebelumnya, sehingga aplikasi memang dibuat sedemikian rupa agar menjadi sederhana. Sangat dimungkinkan jika kedepannya fitur MFA ini dikembangkan tidak hanya berdasarkan pengenalan Wajah, tetapi pengenalan lain juga seperti suara, landmark wajah, dan lainnya. </h6>", unsafe_allow_html=True)
@@ -42,7 +44,6 @@ def home():
     st.markdown("Fitur Rekognisi Wajah pada aplikasi ini hanya dilatih atau melalui <strong>model training berdasarkan Wajah dari salah satu anggota tim kami yaitu Amrina</strong> sehingga untuk melakukan uji coba aplikasi ini, diperlukan foto Wajah dari Amrina. <strong>Untuk melakukan uji coba fitur Multi Faktor Autentikasi pada aplikasi ini, User dapat melakukan upload foto dari folder Umum_DATAI_1/Source/Prototype/Validation</strong> atau [Klik Disini](https://drive.google.com/drive/folders/1yItI63yETPxQjCGQ5de-KhHluHHxhVx9?usp=sharing) untuk melihat dan download foto uji guna Pengujian Aplikasi. Setelah User memiliki Data/Foto uji, User tinggal memilih foto yang akan digunakan untuk menguji fitur Aplikasi.", unsafe_allow_html=True)
     st.markdown("<strong>Karna keterbatasan Dataset yang kami miliki, apabila project ini ingin dikembangkan, kami akan melakukan training data ulang dengan dataset berdasarkan Wajah dari seluruh User (pengguna aplikasi).</strong>", unsafe_allow_html=True)
 
-def authenticate():
     #auth_1
     st.markdown("<br><br>", unsafe_allow_html = True)
     st.subheader("Masukkan foto menghadap Depan")
@@ -100,7 +101,7 @@ def authenticate():
                         if class_name.strip().lower() == "kiri" and confidence_score > 0.9:
                             st.success("Autentikasi Selesaiiii 😁")
                             st.balloons()
-                            # setelah semua autentikasi berhasil, akan langsung redirect masuk ke sistem
+                            # setelah semua autentikasi brehasil, akan langsung redirect masuk ke sistem
                             with st.spinner('Mohon tunggu 5 detik, sedang menuju Sistem...'):
                                 time.sleep(5)
                                 image_path = "ceritanya_tampilan_Sistem.jpg"
@@ -119,16 +120,6 @@ def authenticate():
         <a href="wa.me/6285778822048" style="text-align: center; font-size: 24px;"> Kontak Kami 😄 </a>
     </div>
     """, unsafe_allow_html=True)
-
-def main():
-    st.sidebar.image("logo.png", use_column_width=True)
-    selected = option_menu("Menu", ["HOME", 'AUTHENTICATOR'], 
-        icons=['house', 'camera-fill'], menu_icon="cast", default_index=1)
-
-    if selected == "HOME":
-        home()
-    elif selected == "AUTHENTICATOR":
-        authenticate()
 
 if __name__ == "__main__":
     main()
