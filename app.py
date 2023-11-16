@@ -34,6 +34,9 @@ def predict(image_path):
     return class_name, confidence_score
 
 def main():
+    # Menambahkan sidebar dengan logo
+    st.sidebar.image("logo.png", use_column_width=True)
+
     # Judul dan deskripsi aplikasi
     st.title("Multi Factor Authentication with Face Recognition")
     st.markdown("<h6 style='color: red;'> Perlu diperhatikan bahwa Developer dari proyek ini mempunyai maksud untuk menawarkan Algoritma/Fitur Autentikasi multi faktor yang lebih baik dari autentikasi-autentikasi sebelumnya, sehingga aplikasi memang dibuat sedemikian rupa agar menjadi sederhana. Sangat dimungkinkan jika kedepannya fitur MFA ini dikembangkan tidak hanya berdasarkan pengenalan Wajah, tetapi pengenalan lain juga seperti suara, landmark wajah, dan lainnya. </h6>", unsafe_allow_html=True)
