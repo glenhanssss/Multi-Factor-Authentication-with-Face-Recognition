@@ -34,7 +34,8 @@ def predict(image_path):
     return class_name, confidence_score
 
 def main():
-    
+    # Menambahkan sidebar dengan logo
+    st.sidebar.image("logo.png", use_column_width=True)
 
     # Judul dan deskripsi aplikasi
     st.title("Multi Factor Authentication with Face Recognition")
