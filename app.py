@@ -101,7 +101,7 @@ def main():
                             with st.spinner('Redirecting to Sistem...'):
                                 time.sleep(5)
                                 st.markdown(
-                                    '<meta http-equiv="refresh" content="5;URL=https://www.canva.com/design/DAF0TCjcYbI/PPSTuxNXBdJtNjtkQDQlTw/edit?utm_content=DAF0TCjcYbI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" />',
+                                    '<meta http-equiv="refresh" content="5;URL=https://github.com/glenhanssss/Multi-Factor-Authentication-with-Face-Recognition/blob/main/ceritanya%20tampilan%20Sistem.jpg" />',
                                     unsafe_allow_html=True
                                 )
                         else:
