@@ -100,7 +100,10 @@ def main():
                             # setelah semua autentikasi brehasil, akan langsung redirect masuk ke sistem
                             with st.spinner('Redirecting to Sistem...'):
                                 time.sleep(5)
-                                st.write('<meta http-equiv="refresh" content="2;URL=https://www.canva.com/design/DAF0TCjcYbI/PPSTuxNXBdJtNjtkQDQlTw/edit?utm_content=DAF0TCjcYbI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" />', unsafe_allow_html=True)
+                                st.markdown(
+                                    '<meta http-equiv="refresh" content="5;URL=https://www.canva.com/design/DAF0TCjcYbI/PPSTuxNXBdJtNjtkQDQlTw/edit?utm_content=DAF0TCjcYbI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" />',
+                                    unsafe_allow_html=True
+                                )
                         else:
                             st.warning("Autentikasi Ketiga Gagal😑 Foto harus menghadap Kiri dan akurasi harus diatas 90%. Ulangi Upload Foto")
                 else:
