@@ -8,7 +8,7 @@ import time
 st.set_page_config(layout="wide")
 
 # Load the model
-model = load_model("tm_model.h5", compile=False)
+model = load_model("trained_model.h5", compile=False)
 
 # Load the labels
 class_names = open("labels.txt", "r").readlines()
@@ -47,8 +47,8 @@ def main():
     #auth_1
     st.markdown("<br><br>", unsafe_allow_html = True)
     st.subheader("Masukkan foto menghadap Depan")
-    # uploaded_file = st.file_uploader("Choose an image...", type="jpg", key="auth_1")
-    uploaded_file = st.camera_input("Take a picture", key="auth_1")
+    uploaded_file = st.file_uploader("Choose an image...", type="jpg", key="auth_1")
+    # uploaded_file = st.camera_input("Take a picture", key="auth_1")
 
     if uploaded_file is not None:
         st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
@@ -67,8 +67,8 @@ def main():
             # auth_2
             st.markdown("<br><br>", unsafe_allow_html = True)
             st.subheader("Masukkan foto menghadap Kanan")
-            # uploaded_file = st.file_uploader("Choose an image...", type="jpg", key="auth_2")
-            uploaded_file = st.camera_input("Take a picture", key="auth_2")
+            uploaded_file = st.file_uploader("Choose an image...", type="jpg", key="auth_2")
+            # uploaded_file = st.camera_input("Take a picture", key="auth_2")
 
             if uploaded_file is not None:
                 st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
@@ -87,8 +87,8 @@ def main():
                     #auth_3
                     st.markdown("<br><br>", unsafe_allow_html = True)
                     st.subheader("Masukkan foto menghadap Kiri")
-                    # uploaded_file = st.file_uploader("Choose an image...", type="jpg", key="auth_3")
-                    uploaded_file = st.camera_input("Take a picture", key="auth_3")
+                    uploaded_file = st.file_uploader("Choose an image...", type="jpg", key="auth_3")
+                    # uploaded_file = st.camera_input("Take a picture", key="auth_3")
 
                     if uploaded_file is not None:
                         st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
