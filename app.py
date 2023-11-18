@@ -8,7 +8,7 @@ import time
 st.set_page_config(layout="wide")
 
 # Load the model
-model = load_model("trained_model.h5", compile=False)
+model = load_model("tm_model.h5", compile=False)
 
 # Load the labels
 class_names = open("labels.txt", "r").readlines()
