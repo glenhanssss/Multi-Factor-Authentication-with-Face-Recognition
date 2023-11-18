@@ -61,7 +61,7 @@ def main():
         st.write(f"Confidence Score: {confidence_score:.2%}")
 
         # cek kondisi pertama
-        if class_name.strip().lower() == "depan" and confidence_score > 0.9:
+        if class_name.strip().lower() == "depan" and confidence_score > 0.8:
             st.success("Autentikasi Pertama berhasil👌")
             
             # auth_2
@@ -81,7 +81,7 @@ def main():
                 st.write(f"Confidence Score: {confidence_score:.2%}")
 
                 # cek kondisi kedua
-                if class_name.strip().lower() == "kanan" and confidence_score > 0.9:
+                if class_name.strip().lower() == "kanan" and confidence_score > 0.8:
                     st.success("Autentikasi Kedua berhasil👍")
 
                     #auth_3
@@ -101,7 +101,7 @@ def main():
                         st.write(f"Confidence Score: {confidence_score:.2%}")
 
                         # cek kondisi ketiga
-                        if class_name.strip().lower() == "kiri" and confidence_score > 0.9:
+                        if class_name.strip().lower() == "kiri" and confidence_score > 0.8:
                             st.success("Autentikasi Selesaiiii 😁")
                             st.balloons()
                             # setelah semua autentikasi brehasil, akan langsung redirect masuk ke sistem
@@ -112,15 +112,15 @@ def main():
                                 st.image(image, use_column_width=True)
                                 st.markdown("<h4 style='color: red;'> Perlu diperhatikan bahwa Developer dari proyek ini mempunyai maksud untuk menawarkan Algoritma/Fitur Autentikasi multi faktor yang berbeda dari autentikasi-autentikasi sebelumnya, sehingga aplikasi memang dibuat sedemikian rupa agar menjadi sederhana. Sangat dimungkinkan jika fitur MFA ini kedepannya ingin dikembangkan tidak hanya berdasarkan pengenalan Wajah, tetapi pengenalan lain juga seperti suara, landmark wajah, dan lainnya. </h4>", unsafe_allow_html=True)
                         else:
-                            st.warning("Autentikasi Ketiga Gagal😑 Foto harus menghadap Kiri dan akurasi harus diatas 90%. Ulangi Upload Foto")
+                            st.warning("Autentikasi Ketiga Gagal😑 Foto harus menghadap Kiri dan akurasi harus diatas 80%. Ulangi Upload Foto")
                 else:
-                    st.warning("Autentikasi Kedua Gagal😢 Foto harus menghadap Kanan dan akurasi harus diatas 90%. Ulangi Upload Foto")
+                    st.warning("Autentikasi Kedua Gagal😢 Foto harus menghadap Kanan dan akurasi harus diatas 80%. Ulangi Upload Foto")
         else:
-            st.warning("Autentikasi Pertama Gagal😒 Foto harus menghadap Depan dan akurasi harus diatas 90%. Ulangi Upload Foto")
+            st.warning("Autentikasi Pertama Gagal😒 Foto harus menghadap Depan dan akurasi harus diatas 80%. Ulangi Upload Foto")
 
     st.markdown("""
     <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-        <a href="wa.me/6285778822048" style="text-align: center; font-size: 24px;"> Kontak Kami 😄 </a>
+        <a href="https://linktr.ee/glenhans" style="text-align: center; font-size: 24px;"> Kontak Kami 😄 </a>
     </div>
     """, unsafe_allow_html=True)
 
