@@ -15,11 +15,11 @@ class_names = open("labels.txt", "r").readlines()
 
 def predict(image_path):
     # Create the array of the right shape to feed into the keras model
-    data = np.ndarray(shape=(1, 128, 128, 3), dtype=np.float32)
+    data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
     # Load and preprocess the image
     image = Image.open(image_path).convert("RGB")
-    size = (128, 128)
+    size = (224, 224)
     image = ImageOps.fit(image, size, Image.Resampling.LANCZOS)
     image_array = np.asarray(image)
     normalized_image_array = (image_array.astype(np.float32) / 127.5) - 1
