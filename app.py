@@ -40,13 +40,13 @@ def main():
     # Judul dan deskripsi aplikasi
     st.title("Multi Factor Authentication with Face Recognition")
     st.markdown("<h6 style='color: red;'> Perlu diperhatikan bahwa Developer dari proyek ini mempunyai maksud untuk menawarkan Algoritma/Fitur Autentikasi multi faktor yang berbeda dari autentikasi-autentikasi sebelumnya, sehingga aplikasi memang dibuat sedemikian rupa agar menjadi sederhana. Sangat dimungkinkan jika fitur MFA ini kedepannya ingin dikembangkan tidak hanya berdasarkan pengenalan Wajah, tetapi pengenalan lain juga seperti suara, landmark wajah, dan lainnya. </h6>", unsafe_allow_html=True)
-    st.markdown("Aplikasi Web ini memungkinkan User untuk menjalankan serangkaian Autentikasi Wajah berdasarkan arah menghadap Wajah User, yaitu dimulai dari menghadap Depan-Kanan-Kiri agar User dapat masuk ke Sistem. Jika salah satu Autentikasi tidak berhasil maka User tidak akan bisa melanjutkan Autentikasi berikutnya dan User tidak akan berhasil masuk kedalam Sistem. <strong>[COBA APLIKASI ini dengan KAMERA menggunakan model Face Detection MEDIAPIPE](https://4uth-with-mediapipe.streamlit.app/)</strong>", unsafe_allow_html=True)
+    st.markdown("Aplikasi Web ini memungkinkan User untuk menjalankan serangkaian Autentikasi Wajah berdasarkan arah menghadap Wajah User, yaitu dimulai dari menghadap Depan-Kanan-Kiri agar User dapat masuk ke Sistem. Jika salah satu Autentikasi tidak berhasil maka User tidak akan bisa melanjutkan Autentikasi berikutnya dan User tidak akan berhasil masuk kedalam Sistem. <strong>[COBA APLIKASI ini dengan KAMERA menggunakan model Face Detection MEDIAPIPE.](https://4uth-with-mediapipe.streamlit.app/)</strong>", unsafe_allow_html=True)
     st.markdown("Fitur Rekognisi Wajah pada aplikasi ini hanya dilatih atau melalui <strong> training model berdasarkan Wajah dari beberapa anggota tim kami</strong> sehingga untuk melakukan uji coba aplikasi ini, diperlukan foto Wajah dari data Validasi yang tim kami sediakan. <strong>Untuk melakukan uji coba fitur Multi Faktor Autentikasi pada aplikasi ini, User dapat melakukan upload foto dari folder Umum_DATAI_1/Source/Prototype/Validation</strong> atau <strong>[Klik Disini](https://drive.google.com/drive/folders/1yItI63yETPxQjCGQ5de-KhHluHHxhVx9?usp=sharing)</strong> untuk melihat dan download Foto guna Pengujian Aplikasi. Setelah User memiliki Data/Foto uji, User tinggal memilih foto yang akan digunakan untuk menguji fitur Aplikasi.", unsafe_allow_html=True)
     st.markdown("<strong>Karena keterbatasan Dataset yang kami miliki, apabila project ini ingin dikembangkan, kami akan melakukan training data ulang dengan dataset berdasarkan Wajah dari seluruh User (pengguna aplikasi). [Cek Video Demo aplikasi.](https://drive.google.com/drive/folders/1-3udJnphEkqAxB2DiEXvlR2jVzlRcwTF?usp=sharing)</strong>", unsafe_allow_html=True)
 
     #auth_1
     st.markdown("<br><br>", unsafe_allow_html = True)
-    st.subheader("Masukkan foto menghadap Depan")
+    st.subheader("[Autentikasi 1] - Masukkan foto menghadap Depan")
     uploaded_file = st.file_uploader("Choose an image...", type="jpg", key="auth_1")
     # uploaded_file = st.camera_input("Take a picture", key="auth_1")
 
@@ -66,7 +66,7 @@ def main():
             
             # auth_2
             st.markdown("<br><br>", unsafe_allow_html = True)
-            st.subheader("Masukkan foto menghadap Kanan")
+            st.subheader("[Autentikasi 2] - Masukkan foto menghadap Kanan")
             uploaded_file = st.file_uploader("Choose an image...", type="jpg", key="auth_2")
             # uploaded_file = st.camera_input("Take a picture", key="auth_2")
 
@@ -86,7 +86,7 @@ def main():
 
                     #auth_3
                     st.markdown("<br><br>", unsafe_allow_html = True)
-                    st.subheader("Masukkan foto menghadap Kiri")
+                    st.subheader("[Autentikasi Terakhir] -Masukkan foto menghadap Kiri")
                     uploaded_file = st.file_uploader("Choose an image...", type="jpg", key="auth_3")
                     # uploaded_file = st.camera_input("Take a picture", key="auth_3")
 
