@@ -4,7 +4,7 @@ Try this apps on https://multi-factor-4uthentication-with-face-recognition.strea
 
 Try this apps using Mediapipe model (camera) on https://4uth-with-mediapipe.streamlit.app/ and 
 
-the documentations on https://github.com/glenhanssss/Authentication-with-Mediapipe
+the documentations on https://github.com/glenhanssss/MediaPipe-Multi-Factor-Authentication-with-Face-Recognition
 
 Dislcaimer:
 
